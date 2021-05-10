@@ -7,7 +7,7 @@ function Input({
     handleChange }) {
         return (
             <>
-            <label htmlFor={list}>{title}></label>
+            <label htmlFor={list}>{title}</label>
             <input
              id={list}
              list={list}
@@ -19,3 +19,5 @@ function Input({
             </>
         );
 }
+
+export default Input;
