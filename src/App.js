@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+
 //Imported components 
 import Nav from './Components/Nav/Nav';
 
@@ -19,7 +20,7 @@ const [ state, setState ] = useState({ lists: []});
 
   useEffect(() => {
     async function getLists() {
-      const lists = await (await fetch('http://localhost:3000/lists')).then(res => res.json());
+      const lists = await fetch('http://localhost:3000/bucketlists').then(res => res.json());
       setState({ lists });
     }
     getLists();
@@ -27,10 +28,10 @@ const [ state, setState ] = useState({ lists: []});
 
   async function handleAdd(formInputs) {
     try {
-      const list = await fetch('http://localhost:3000/notices', {
+      const list = await fetch('http://localhost:3000/bucketlists', {
         method: 'POST',
         headers: {
-          'Content-type' : 'Application/jason'
+          'Content-type' : 'Application/JSON'
         },
         body: JSON.stringify(formInputs)
       }).then(res => res.json());

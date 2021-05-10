@@ -46,6 +46,7 @@ return (
         value={formState.title}
         id='title'
         />
+        <input type='submit' value={props.editFormVisible ? 'Update' : 'Add'} />
     </form>
 );
 
